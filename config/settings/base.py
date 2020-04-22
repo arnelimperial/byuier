@@ -84,11 +84,13 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "rest_framework",
 ]
 
 LOCAL_APPS = [
     "byuier.users.apps.UsersConfig",
     # Your stuff: custom apps go here
+    "byuier.news.apps.NewsConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

@@ -16,6 +16,7 @@ urlpatterns = [
     path("users/", include("byuier.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("api/", include("byuier.news.api.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
