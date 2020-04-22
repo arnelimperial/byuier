@@ -6,8 +6,13 @@ from django.utils.timesince import timesince
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-
     time_since_publication = serializers.SerializerMethodField()
+
+    # return string repr of the foreign key
+    author = serializers.StringRelatedField()
+
+    # return json repr of the foreign key
+    # author = JournalistSerializer(read_only=True)
 
     class Meta:
         model = models.Article
@@ -33,4 +38,14 @@ class ArticleSerializer(serializers.ModelSerializer):
         return value
 
 
+class JournalistSerializer(serializers.ModelSerializer):
+    # articles = ArticleSerializer(many=True, read_only=True)
+    articles = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='article-detail'
+    )
 
+    class Meta:
+        model = models.Journalist
+        fields = '__all__'

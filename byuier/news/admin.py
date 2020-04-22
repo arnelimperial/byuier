@@ -1,4 +1,5 @@
 from django.contrib import admin
 from . import models
 
-admin.site.register(models.Article)
+newsModels = [models.Article, models.Journalist]
+admin.site.register(newsModels)
