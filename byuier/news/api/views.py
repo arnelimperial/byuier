@@ -3,7 +3,8 @@ from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from byuier.news.models import Article
-from byuier.news.api.serializers import ArticleSerializer
+# from byuier.news.api.serializers import ArticleSerializer
+from byuier.news.api.mod_serializers import ArticleSerializer
 from rest_framework.generics import get_object_or_404
 
 
